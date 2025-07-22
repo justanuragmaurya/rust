@@ -40,8 +40,16 @@ use std::ops::Add;
 fn main(){
     println!("{}", add(10, 90)); 
     println!("{}", add(10.1,90.6)); 
+    display_element(5, 9, 10, 99);
 }
 
 fn add<T:Add<Output = T>>(x:T,y:T)->T{
     return x+y;
+}
+
+fn display_element<T:std::fmt::Display>(a:T,b:T,c:T,d:T){
+    println!("{}",a);
+    println!("{}",b);
+    println!("{}",c);
+    println!("{}",d);
 }
